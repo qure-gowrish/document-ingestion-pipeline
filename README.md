@@ -162,4 +162,4 @@ After validating the POC approach, the production system adds:
 2. Structured logging with correlation IDs
 3. Unit and integration test suite
 4. Observability hooks (metrics, tracing)
-5. Security hardening and secrets management
+5. Security hardening and secrets management.
