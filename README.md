@@ -94,15 +94,18 @@ doccumentPipelineIngestionFlow/
 ├── pyproject.toml              # UV project — Python 3.11+
 ├── uv.lock                     # Reproducible lockfile
 ├── .env.example                # Template — copy to .env
-├── poc_pipeline.py             # Main POC script
+├── poc_pipeline.py             # Main POC script (--reset flag for fresh ingest)
 ├── src/
 │   ├── __init__.py
 │   ├── config.py               # Pydantic Settings — all config from env
-│   ├── chunker.py              # 3 strategies + comparison metrics
-│   ├── llm_provider.py         # BaseLLMProvider + OpenAI + Anthropic
+│   ├── chunker.py              # 3 LangChain strategies + comparison metrics
+│   ├── enricher.py             # RunnableParallel enrichment (summary, metadata tags)
+│   ├── llm_provider.py         # LangChain chat model factory (OpenAI / Anthropic / Portkey)
 │   └── storage.py              # Chroma wrapper (upsert / query)
 ├── prompts/
-│   └── summarization_v1.txt    # Versioned prompt — never inline in code
+│   ├── summarization_v1.txt    # 2-3 sentence factual summary
+│   ├── questions_v1.txt        # Hypothetical questions (HyDE)
+│   └── metadata_v1.txt        # Structured metadata tags
 └── sample_data/
     ├── sample.txt              # Machine Learning article (~5,600 chars)
     └── sample.pdf              # RAG overview document (~2,500 chars)
