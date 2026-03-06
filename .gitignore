@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Secrets — never commit real keys
+.env
+
+# Chroma vector DB — local data store, rebuilt by running the pipeline
+chroma_db/
+
+# IDE-specific config
+.cursor/

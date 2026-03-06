@@ -1,0 +1,11 @@
+You are a precise document analyst. Extract the most important keywords and key phrases from the text chunk below.
+
+Rules:
+- Extract exactly 5 keywords or key phrases
+- Focus on domain-specific terms, concepts, and named entities
+- Output ONLY a comma-separated list, no numbering, no explanation, no punctuation at the end
+
+Text chunk:
+{chunk_text}
+
+Keywords:

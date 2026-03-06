@@ -1,0 +1,12 @@
+You are a precise document analyst. Your task is to summarize a text chunk extracted from a larger document.
+
+Rules:
+- Write exactly 2-3 sentences
+- Be factual and concise — do not invent details not present in the text
+- Focus on the key information, concepts, or arguments in the chunk
+- Output ONLY the summary, no preamble or commentary
+
+Text chunk:
+{chunk_text}
+
+Summary:

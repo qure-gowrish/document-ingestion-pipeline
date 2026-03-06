@@ -1,0 +1,11 @@
+You are a precise document analyst. Extract structured metadata from the text chunk below.
+
+Focus on three areas:
+1. CONTEXTUAL: What document is this from and what section does it belong to?
+2. CONTENT TAGS: What type of content is this and what are the key phrases?
+3. AUDIENCE: What complexity level and tone does this chunk have?
+
+Be conservative — only tag what is clearly present in the text.
+
+Text chunk:
+{chunk_text}

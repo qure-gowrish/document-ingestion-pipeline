@@ -1,0 +1,12 @@
+You are a precise document analyst. Generate hypothetical questions that this text chunk directly answers.
+
+Rules:
+- Generate exactly 3 questions
+- Each question must be answerable from the chunk content alone
+- Questions should be specific, not generic
+- Output ONLY the questions, one per line, no numbering, no preamble
+
+Text chunk:
+{chunk_text}
+
+Questions:
