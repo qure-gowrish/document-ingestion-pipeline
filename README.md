@@ -94,15 +94,18 @@ doccumentPipelineIngestionFlow/
 ├── pyproject.toml              # UV project — Python 3.11+
 ├── uv.lock                     # Reproducible lockfile
 ├── .env.example                # Template — copy to .env
-├── poc_pipeline.py             # Main POC script
+├── poc_pipeline.py             # Main POC script (--reset flag for fresh ingest)
 ├── src/
 │   ├── __init__.py
 │   ├── config.py               # Pydantic Settings — all config from env
-│   ├── chunker.py              # 3 strategies + comparison metrics
-│   ├── llm_provider.py         # BaseLLMProvider + OpenAI + Anthropic
+│   ├── chunker.py              # 3 LangChain strategies + comparison metrics
+│   ├── enricher.py             # RunnableParallel enrichment (summary, metadata tags)
+│   ├── llm_provider.py         # LangChain chat model factory (OpenAI / Anthropic / Portkey)
 │   └── storage.py              # Chroma wrapper (upsert / query)
 ├── prompts/
-│   └── summarization_v1.txt    # Versioned prompt — never inline in code
+│   ├── summarization_v1.txt    # 2-3 sentence factual summary
+│   ├── questions_v1.txt        # Hypothetical questions (HyDE)
+│   └── metadata_v1.txt        # Structured metadata tags
 └── sample_data/
     ├── sample.txt              # Machine Learning article (~5,600 chars)
     └── sample.pdf              # RAG overview document (~2,500 chars)
@@ -155,8 +158,8 @@ After validating the POC approach, the production system adds:
 5. Retry logic with exponential backoff
 
 **Phase 3 — Production Hardening**
-6. Docker + docker-compose with LocalStack for SQS simulation
-7. Structured logging with correlation IDs
-8. Unit and integration test suite
-9. Observability hooks (metrics, tracing)
-10. Security hardening and secrets management
+1. Docker + docker-compose with LocalStack for SQS simulation
+2. Structured logging with correlation IDs
+3. Unit and integration test suite
+4. Observability hooks (metrics, tracing)
+5. Security hardening and secrets management
