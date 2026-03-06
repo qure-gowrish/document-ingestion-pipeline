@@ -155,8 +155,8 @@ After validating the POC approach, the production system adds:
 5. Retry logic with exponential backoff
 
 **Phase 3 — Production Hardening**
-6. Docker + docker-compose with LocalStack for SQS simulation
-7. Structured logging with correlation IDs
-8. Unit and integration test suite
-9. Observability hooks (metrics, tracing)
-10. Security hardening and secrets management
+1. Docker + docker-compose with LocalStack for SQS simulation
+2. Structured logging with correlation IDs
+3. Unit and integration test suite
+4. Observability hooks (metrics, tracing)
+5. Security hardening and secrets management
